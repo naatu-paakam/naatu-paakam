@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function Footer() {
   return (
     <footer className="bg-[#2C1507] text-[#D4B896] py-10">
@@ -9,6 +11,7 @@ export function Footer() {
         </div>
         <div className="flex gap-5 text-[#C5A882]">
           <a href="https://naatupaakam.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5EAD0] transition-colors">Website</a>
+          <Link to="/incubation" className="hover:text-[#F5EAD0] transition-colors">InnoLabs</Link>
           <a href="https://github.com/naatu-paakam" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5EAD0] transition-colors">GitHub</a>
           <a href="https://pavan-ideas.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5EAD0] transition-colors">Ideas</a>
         </div>

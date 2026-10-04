@@ -1,19 +1,22 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FlaskConical } from 'lucide-react'
 import { projects } from '../data/projects'
 import { ProjectCard } from './ProjectCard'
 
-type Filter = 'all' | 'live' | 'beta' | 'incubating'
+type Filter = 'all' | 'live' | 'beta'
 
 const filters: { label: string; value: Filter }[] = [
-  { label: 'All',        value: 'all' },
-  { label: 'Live',       value: 'live' },
-  { label: 'Beta',       value: 'beta' },
-  { label: 'Incubating', value: 'incubating' },
+  { label: 'All',  value: 'all'  },
+  { label: 'Live', value: 'live' },
+  { label: 'Beta', value: 'beta' },
 ]
+
+const published = projects.filter(p => p.status !== 'incubating')
 
 export function Products() {
   const [active, setActive] = useState<Filter>('all')
-  const visible = active === 'all' ? projects : projects.filter(p => p.status === active)
+  const visible = active === 'all' ? published : published.filter(p => p.status === active)
 
   return (
     <section id="products" className="py-20 bg-[#FDF4E3]">
@@ -46,6 +49,17 @@ export function Products() {
           {visible.map(p => (
             <ProjectCard key={p.id} project={p} />
           ))}
+        </div>
+
+        {/* InnoLabs teaser */}
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/incubation"
+            className="inline-flex items-center gap-2.5 bg-white border border-[#D4B896] text-[#7C4A22] text-sm font-medium px-6 py-3 rounded-full hover:border-[#D4941A] hover:text-[#D4941A] transition-colors shadow-sm"
+          >
+            <FlaskConical className="w-4 h-4" strokeWidth={1.75} />
+            See what's brewing in InnoLabs →
+          </Link>
         </div>
       </div>
     </section>

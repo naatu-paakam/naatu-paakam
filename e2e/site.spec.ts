@@ -15,13 +15,24 @@ test('TC-NP-002: hero section renders', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Explore Products' })).toBeVisible()
 })
 
-// TC-NP-003: all 7 project cards render
-test('TC-NP-003: all seven project cards present', async ({ page }) => {
+// TC-NP-003: only live + beta cards on home page (incubating excluded)
+test('TC-NP-003: live and beta project cards present on home page', async ({ page }) => {
   await page.goto('/')
-  const cards = ['JsDayCare', 'Family Vibes', 'Pkeep', 'Keep Plants Live', 'AI Companion', 'The Pickle Pot', 'LaunchPad']
-  for (const name of cards) {
+  const shown = ['JsDayCare', 'Family Vibes', 'Pkeep', 'Keep Plants Live', 'AI Companion']
+  for (const name of shown) {
     await expect(page.getByRole('heading', { name, exact: true })).toBeVisible()
   }
+  // incubating projects must NOT appear on home page
+  await expect(page.getByRole('heading', { name: 'The Pickle Pot', exact: true })).not.toBeVisible()
+  await expect(page.getByRole('heading', { name: 'LaunchPad', exact: true })).not.toBeVisible()
+})
+
+// TC-NP-003b: incubation page shows both incubating projects
+test('TC-NP-003b: incubation page shows incubating projects', async ({ page }) => {
+  await page.goto('/incubation')
+  await expect(page.getByRole('heading', { name: 'The Pickle Pot', exact: true })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'LaunchPad', exact: true })).toBeVisible()
+  await expect(page.getByText("What's Brewing")).toBeVisible()
 })
 
 // TC-NP-004: live projects have Open App links
@@ -62,6 +73,45 @@ test('TC-NP-007: footer renders with nav links', async ({ page }) => {
   const footer = page.getByRole('contentinfo')
   await expect(footer).toContainText('Naatu Paakam')
   await expect(footer.getByRole('link', { name: 'GitHub' })).toBeVisible()
+})
+
+// TC-NP-009: nav links scroll to correct sections / pages
+test('TC-NP-009: How We Build nav link scrolls to pipeline section', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('navigation').getByRole('link', { name: 'How We Build' }).click()
+  await page.waitForTimeout(600)
+  const section = page.locator('#about')
+  const box = await section.boundingBox()
+  const scrollY = await page.evaluate(() => window.scrollY)
+  expect(scrollY).toBeGreaterThan(300)
+  expect(box).not.toBeNull()
+})
+
+test('TC-NP-009b: Products nav link scrolls to products section', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('navigation').getByRole('link', { name: 'Products' }).click()
+  await page.waitForTimeout(600)
+  const scrollY = await page.evaluate(() => window.scrollY)
+  expect(scrollY).toBeGreaterThan(600)
+})
+
+test('TC-NP-009c: InnoLabs nav link navigates to /incubation', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('link', { name: 'InnoLabs' }).first().click()
+  await expect(page).toHaveURL(/\/incubation/)
+  await expect(page.getByText("What's Brewing")).toBeVisible()
+})
+
+test('TC-NP-009d: Back link on incubation page returns to home', async ({ page }) => {
+  await page.goto('/incubation')
+  await page.getByRole('link', { name: /Back to Naatu Paakam/ }).click()
+  await expect(page).toHaveURL('http://localhost:5184/')
+})
+
+test('TC-NP-009e: logo in header links to home from incubation page', async ({ page }) => {
+  await page.goto('/incubation')
+  await page.locator('header img[alt="Naatu Paakam"]').click()
+  await expect(page).toHaveURL('http://localhost:5184/')
 })
 
 // TC-NP-008: GitHub links target naatu-paakam org
