@@ -2,10 +2,12 @@
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
-  --color-np-green-900: #1B4332;
-  --color-np-green-700: #2D6A4F;
-  --color-np-green-500: #52B788;
-  --color-np-green-200: #B7E4C7;
-  --color-np-cream: #F7EDD0;
-  --color-np-gold: #F5C842;
+  --color-np-brown-900: #2C1507;
+  --color-np-brown-700: #4A2810;
+  --color-np-brown-500: #7C4A22;
+  --color-np-amber:     #D4941A;
+  --color-np-gold:      #F5C842;
+  --color-np-green:     #2D7D35;
+  --color-np-cream:     #FDF4E3;
+  --color-np-cream-dark: #F5EAD0;
 }
