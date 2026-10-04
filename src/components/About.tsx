@@ -9,7 +9,7 @@ const stages = [
     color: '#F5C842',
     bg: '#fffbeb',
     border: '#fde68a',
-    principles: ['Scored on reach, revenue & feasibility', 'Real problem for Indian families', 'Unique — not a clone'],
+    principles: ['Scored on reach, revenue & feasibility', 'Solves a real problem for families', 'Unique — not a clone'],
     value: 'Only high-signal ideas make it forward',
   },
   {
@@ -169,7 +169,7 @@ export function About() {
           <h3 className="text-[#F7EDD0] font-bold text-lg text-center mb-6">Guiding Principles</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
             {[
-              { title: 'Real Problems', body: 'Every product solves a genuine daily friction for families — not a solution looking for a problem.' },
+              { title: 'Real Problems', body: 'Every product addresses a genuine daily friction — not a solution looking for a problem.' },
               { title: 'Ship Small, Learn Fast', body: 'MVPs over roadmaps. Real usage beats assumptions. We iterate on what users actually do.' },
               { title: 'Open by Default', body: 'Code lives on GitHub. Decisions are documented. No black boxes — users and contributors can see how things work.' },
               { title: 'Sustainable Revenue', body: 'Each product aims for a clear monetisation path — subscriptions, per-society fees, or freemium — so it can sustain itself.' },
