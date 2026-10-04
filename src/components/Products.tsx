@@ -22,7 +22,7 @@ export function Products() {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Our Products</h2>
           <p className="text-slate-500 max-w-xl mx-auto">
-            Each product solves a real problem for Indian families. We build in the open and ship iteratively.
+            Each product solves a real problem for families. We build in the open and ship iteratively.
           </p>
         </div>
 

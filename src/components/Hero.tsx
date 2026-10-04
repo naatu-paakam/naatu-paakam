@@ -16,10 +16,10 @@ export function Hero() {
           Naatu Paakam
         </h1>
         <p className="text-xl sm:text-2xl text-[#95D5B2] font-medium mb-4">
-          Native Kitchen — Apps for Everyday Indian Family Life
+          Native Kitchen — Apps for Everyday Family Life
         </p>
         <p className="max-w-2xl mx-auto text-[#B7E4C7] text-base sm:text-lg leading-relaxed mb-10">
-          We build simple, focused tools for Indian families — managing the home,
+          We build simple, focused tools for families — managing the home,
           the school, and the memories in between. Ideas seeded in{' '}
           <a href="https://github.com/codepil" target="_blank" rel="noopener noreferrer"
             className="text-[#F5C842] hover:underline">codepil</a>,
