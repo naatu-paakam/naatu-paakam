@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B4332"/>
+      <stop offset="100%" style="stop-color:#2D6A4F"/>
+    </linearGradient>
+    <linearGradient id="leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#95D5B2"/>
+      <stop offset="100%" style="stop-color:#74C69D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- Subtle inner glow ring -->
+  <rect x="12" y="12" width="488" height="488" rx="86"
+        fill="none" stroke="#2D6A4F" stroke-width="2" opacity="0.6"/>
+
+  <!-- NP letters — geometric, bold -->
+  <!-- N -->
+  <g fill="#F7EDD0">
+    <!-- N left vertical -->
+    <rect x="82" y="168" width="44" height="196" rx="6"/>
+    <!-- N diagonal bar -->
+    <polygon points="82,168 126,168 286,332 286,364 242,364"/>
+    <!-- N right vertical -->
+    <rect x="242" y="168" width="44" height="196" rx="6"/>
+  </g>
+
+  <!-- P -->
+  <g fill="#F7EDD0">
+    <!-- P vertical stem -->
+    <rect x="318" y="168" width="44" height="196" rx="6"/>
+    <!-- P bowl outer -->
+    <path d="M318 168 h86 a72 72 0 0 1 0 144 h-86 v-44 h80 a28 28 0 0 0 0-56 h-80 Z" fill="#F7EDD0"/>
+  </g>
+
+  <!-- Small leaf — top right accent, nod to "Naatu" (natural/village) -->
+  <g transform="translate(390, 80) rotate(-30)">
+    <ellipse cx="0" cy="0" rx="18" ry="30" fill="url(#leaf-grad)" opacity="0.9"/>
+    <line x1="0" y1="-28" x2="0" y2="28" stroke="#1B4332" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="-10" x2="10" y2="-2" stroke="#1B4332" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="0" y1="4" x2="-10" y2="12" stroke="#1B4332" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Dot accent — bottom centre, earthy gold -->
+  <circle cx="256" cy="418" r="10" fill="#F5C842" opacity="0.85"/>
+  <circle cx="224" cy="418" r="6" fill="#F5C842" opacity="0.45"/>
+  <circle cx="288" cy="418" r="6" fill="#F5C842" opacity="0.45"/>
+</svg>

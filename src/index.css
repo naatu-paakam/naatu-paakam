@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-np-green-900: #1B4332;
+  --color-np-green-700: #2D6A4F;
+  --color-np-green-500: #52B788;
+  --color-np-green-200: #B7E4C7;
+  --color-np-cream: #F7EDD0;
+  --color-np-gold: #F5C842;
+}
