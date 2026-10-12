@@ -70,21 +70,16 @@ test('NAV-008: No redundant Back link on incubation page (nav is sufficient)', a
 })
 
 // ── Footer links ─────────────────────────────────────────────────────────────
-test('NAV-009: Footer Website link is external and present', async ({ page }) => {
+test('NAV-009: Footer contains brand and Ideas link only', async ({ page }) => {
   await page.goto('/')
   const footer = page.getByRole('contentinfo')
-  const website = footer.getByRole('link', { name: 'Website' })
-  await expect(website).toBeVisible()
-  expect(await website.getAttribute('href')).toContain('naatupaakam.com')
+  await expect(footer).toContainText('Naatu Paakam')
+  await expect(footer.getByRole('link', { name: 'Ideas' })).toBeVisible()
+  await expect(footer.getByRole('link', { name: 'Website' })).not.toBeVisible()
+  await expect(footer.getByRole('link', { name: 'InnoLabs' })).not.toBeVisible()
 })
 
-test('NAV-010: Footer InnoLabs link navigates to /incubation', async ({ page }) => {
-  await page.goto('/')
-  await page.getByRole('contentinfo').getByRole('link', { name: 'InnoLabs' }).click()
-  await expect(page).toHaveURL('/incubation')
-})
-
-test('NAV-011: Footer Ideas link is external', async ({ page }) => {
+test('NAV-011: Footer Ideas link points to pavan-ideas', async ({ page }) => {
   await page.goto('/')
   const ideas = page.getByRole('contentinfo').getByRole('link', { name: 'Ideas' })
   await expect(ideas).toBeVisible()
