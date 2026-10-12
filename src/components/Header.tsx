@@ -12,8 +12,8 @@ export function Header() {
           <span className="text-[#F5EAD0] font-bold tracking-tight">Naatu Paakam</span>
         </Link>
         <nav className="hidden sm:flex items-center gap-6 text-sm text-[#D4941A]">
-          {home && <a href="#about"    className="hover:text-[#F5EAD0] transition-colors">How We Build</a>}
-          {home && <a href="#products" className="hover:text-[#F5EAD0] transition-colors">Products</a>}
+          <a href={home ? '#about'    : '/#about'}    className="hover:text-[#F5EAD0] transition-colors">How We Build</a>
+          <a href={home ? '#products' : '/#products'} className="hover:text-[#F5EAD0] transition-colors">Products</a>
           <Link to="/incubation" className="hover:text-[#F5EAD0] transition-colors">InnoLabs</Link>
         </nav>
       </div>
