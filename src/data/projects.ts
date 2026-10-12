@@ -52,6 +52,19 @@ export const projects: Project[] = [
     tags: ['PropTech', 'QR Codes', 'Supabase'],
   },
   {
+    id: 'bayarea-temples',
+    name: 'Bay Area Temples',
+    tagline: 'Discover Hindu Temples with AI',
+    description:
+      'A devotee-built directory of 14 Hindu temples across the San Francisco Bay Area — ask in plain words, filter by deity or festival, plan your visit, and get AI-powered answers about timings and events.',
+    color: '#b91c1c',
+    iconName: 'MapPin',
+    liveUrl: 'https://bayarea-temples.netlify.app',
+    githubUrl: 'https://github.com/naatu-paakam/bayarea-temples',
+    status: 'live',
+    tags: ['AI', 'Directory', 'Claude', 'Netlify Functions'],
+  },
+  {
     id: 'keep-plants-live',
     name: 'Keep Plants Live',
     tagline: 'Never Forget to Water Again',

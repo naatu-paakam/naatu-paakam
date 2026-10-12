@@ -1,5 +1,5 @@
 import type { LucideProps } from 'lucide-react'
-import { ExternalLink, GitFork, School, Heart, Building2, Sprout, Brain, ShoppingBag, Rocket } from 'lucide-react'
+import { ExternalLink, GitFork, School, Heart, Building2, Sprout, Brain, ShoppingBag, Rocket, MapPin } from 'lucide-react'
 import type { ForwardRefExoticComponent, RefAttributes } from 'react'
 
 type LucideIcon = ForwardRefExoticComponent<LucideProps & RefAttributes<SVGSVGElement>>
@@ -7,7 +7,7 @@ import type { Project } from '../data/projects'
 import { statusMeta } from '../data/projects'
 
 const iconMap: Record<string, LucideIcon> = {
-  School, Heart, Building2, Sprout, Brain, ShoppingBag, Rocket,
+  School, Heart, Building2, Sprout, Brain, ShoppingBag, Rocket, MapPin,
 }
 
 interface Props { project: Project }

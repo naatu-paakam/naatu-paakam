@@ -57,8 +57,8 @@ export function Hero() {
         {/* stats */}
         <div className="inline-flex divide-x divide-[#D4941A]/25 rounded-2xl bg-white/60 border border-[#D4941A]/30 overflow-hidden shadow-sm backdrop-blur-sm">
           {[
-            { label: 'Products',   value: '7' },
-            { label: 'Live',       value: '3' },
+            { label: 'Products',   value: '8' },
+            { label: 'Live',       value: '4' },
             { label: 'In Beta',    value: '2' },
             { label: 'Incubating', value: '2' },
           ].map(({ label, value }) => (
