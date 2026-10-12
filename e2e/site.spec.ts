@@ -72,7 +72,8 @@ test('TC-NP-007: footer renders with nav links', async ({ page }) => {
   await page.goto('/')
   const footer = page.getByRole('contentinfo')
   await expect(footer).toContainText('Naatu Paakam')
-  await expect(footer.getByRole('link', { name: 'GitHub' })).toBeVisible()
+  await expect(footer.getByRole('link', { name: 'InnoLabs' })).toBeVisible()
+  await expect(footer.getByRole('link', { name: 'Ideas' })).toBeVisible()
 })
 
 // TC-NP-009: nav links scroll to correct sections / pages
