@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FlaskConical, ShoppingBag, Rocket, ArrowLeft, ExternalLink, GitFork } from 'lucide-react'
+import { FlaskConical, ShoppingBag, Rocket, ExternalLink, GitFork } from 'lucide-react'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 
@@ -41,9 +41,6 @@ export function IncubationPage() {
         {/* hero */}
         <section className="bg-[#2C1507] text-[#F5EAD0] py-16">
           <div className="max-w-4xl mx-auto px-6">
-            <Link to="/" className="inline-flex items-center gap-1.5 text-[#D4941A] text-sm font-medium mb-8 hover:underline">
-              <ArrowLeft className="w-4 h-4" /> Back to Naatu Paakam
-            </Link>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-[#4A2810] flex items-center justify-center">
                 <FlaskConical className="w-5 h-5 text-[#D4941A]" strokeWidth={1.75} />

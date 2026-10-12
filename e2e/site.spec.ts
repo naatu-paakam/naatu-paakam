@@ -103,9 +103,9 @@ test('TC-NP-009c: InnoLabs nav link navigates to /incubation', async ({ page }) 
   await expect(page.getByText("What's Brewing")).toBeVisible()
 })
 
-test('TC-NP-009d: Back link on incubation page returns to home', async ({ page }) => {
+test('TC-NP-009d: Logo on incubation page returns to home', async ({ page }) => {
   await page.goto('/incubation')
-  await page.getByRole('link', { name: /Back to Naatu Paakam/ }).click()
+  await page.getByRole('link', { name: 'Naatu Paakam' }).first().click()
   await expect(page).toHaveURL('http://localhost:5184/')
 })
 

@@ -61,9 +61,11 @@ test('NAV-007: Products from incubation goes to /#products', async ({ page }) =>
   await expect(page.getByRole('heading', { name: 'Our Products' })).toBeVisible()
 })
 
-test('NAV-008: Back to Naatu Paakam link on incubation page', async ({ page }) => {
+test('NAV-008: No redundant Back link on incubation page (nav is sufficient)', async ({ page }) => {
   await page.goto('/incubation')
-  await page.getByRole('link', { name: /Back to Naatu Paakam/i }).click()
+  await expect(page.getByRole('link', { name: /Back to Naatu Paakam/i })).not.toBeVisible()
+  // Logo still goes home
+  await page.getByRole('link', { name: 'Naatu Paakam' }).first().click()
   await expect(page).toHaveURL('/')
 })
 
