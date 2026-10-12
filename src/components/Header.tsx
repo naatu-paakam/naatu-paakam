@@ -15,14 +15,6 @@ export function Header() {
           {home && <a href="#about"    className="hover:text-[#F5EAD0] transition-colors">How We Build</a>}
           {home && <a href="#products" className="hover:text-[#F5EAD0] transition-colors">Products</a>}
           <Link to="/incubation" className="hover:text-[#F5EAD0] transition-colors">InnoLabs</Link>
-          <a
-            href="https://github.com/naatu-paakam"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#F5EAD0] transition-colors"
-          >
-            GitHub
-          </a>
         </nav>
       </div>
     </header>
