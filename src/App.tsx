@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ScrollToTop } from './components/ScrollToTop'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Products } from './components/Products'
@@ -23,6 +24,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/"            element={<HomePage />} />
         <Route path="/incubation"  element={<IncubationPage />} />
