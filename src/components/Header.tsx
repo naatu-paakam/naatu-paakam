@@ -7,7 +7,11 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-[#2C1507]/97 backdrop-blur border-b border-[#4A2810]">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
+        <Link
+          to="/"
+          className="flex items-center gap-3"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <img src="/np-logo.png" alt="Naatu Paakam" className="w-8 h-8 rounded-md object-cover" />
           <span className="text-[#F5EAD0] font-bold tracking-tight">Naatu Paakam</span>
         </Link>

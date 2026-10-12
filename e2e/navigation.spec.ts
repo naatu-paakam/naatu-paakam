@@ -155,3 +155,17 @@ test('NAV-018: InnoLabs page CTA returns to products section', async ({ page }) 
   await expect(page).toHaveURL(/\/#products/)
   await expect(page.getByRole('heading', { name: 'Our Products' })).toBeVisible()
 })
+
+test('NAV-019: Logo scrolls to top when clicked from Products section', async ({ page }) => {
+  await page.goto('/')
+  // Scroll down to products section
+  await page.getByRole('navigation').getByRole('link', { name: 'Products' }).click()
+  await page.waitForTimeout(600)
+  const scrollAtProducts = await page.evaluate(() => window.scrollY)
+  expect(scrollAtProducts).toBeGreaterThan(300)
+  // Click logo — should scroll back to top
+  await page.getByRole('link', { name: 'Naatu Paakam' }).first().click()
+  await page.waitForTimeout(800)
+  const scrollAfterLogo = await page.evaluate(() => window.scrollY)
+  expect(scrollAfterLogo).toBeLessThan(50)
+})
