@@ -13,15 +13,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'jsdaycare',
-    name: 'JsDayCare',
+    id: 'daycare-portal',
+    name: 'Daycare Portal',
     tagline: 'Daycare & School Management',
     description:
       'A SaaS portal for daycare centres and schools — attendance, room management, staff schedules, student check-ins, and parent invite flows.',
     color: '#f97316',
     iconName: 'School',
     liveUrl: 'https://usdaycare.netlify.app',
-    githubUrl: 'https://github.com/naatu-paakam/jsdaycare',
+    githubUrl: 'https://github.com/naatu-paakam/daycare-portal',
     status: 'live',
     tags: ['SaaS', 'EdTech', 'Supabase'],
   },
